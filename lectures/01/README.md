@@ -5,7 +5,7 @@ The lectures this week will revisit some Git, and look at the first three progra
 We will also briefly introduce the Python command line.
 
 ## 1. Introduction
-## 2. The Python Interprer, and Programming Languages
+## 2. The Python Interpreter, and Programming Languages
 ## 3. The First Three Programs
 ## 4. Extending a Program
 ## 5. A Summary
