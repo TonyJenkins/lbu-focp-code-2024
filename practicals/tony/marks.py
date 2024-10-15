@@ -12,7 +12,7 @@ if __name__ == '__main__':
         while True:
             try:
                 mark = int(input('Enter Next Grade: '))
-                if 0 <= mark <= 100:
+                if 0 >= mark >= 100:
                     mark_list.append(mark)
                     break
             except ValueError:
