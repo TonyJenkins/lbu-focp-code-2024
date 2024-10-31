@@ -10,6 +10,9 @@ def time_as_string(seconds):
 def parse_line(data_line):
     this_runner, this_time = data_line.split('::')
 
+    if not this_runner:
+        raise ValueError('Invalid data on line. Probably missing runner number')
+
     return this_runner, int(this_time)
 
 
@@ -40,14 +43,17 @@ if __name__ == '__main__':
         if next_line == 'END':
             break
         else:
-            runner, current_time = parse_line(next_line)
+            try:
+                runner, current_time = parse_line(next_line)
 
-            if times:
-                top_runner = runner if current_time < min(times) else top_runner
-            else:
-                top_runner = runner
+                if times:
+                    top_runner = runner if current_time < min(times) else top_runner
+                else:
+                    top_runner = runner
 
-            times.append(current_time)
+                times.append(current_time)
+            except ValueError:
+                print('Invalid data. Will ignore.')
 
     if times:
         print_statistics(times, top_runner)
