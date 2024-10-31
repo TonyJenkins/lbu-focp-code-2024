@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+def time_as_string(seconds):
+    mins = seconds // 60
+    secs = seconds % 60
+
+    return f'{mins} minute{"" if mins == 1 else "s"}, {secs} second{"" if secs == 1 else "s"}'
+
 
 def parse_line(data_line):
     this_runner, this_time = data_line.split('::')
@@ -14,9 +20,9 @@ def print_statistics(final_times, best_runner):
     print()
     print(f'Number of Runners: {len(final_times)}.')
     print()
-    print(f'Fastest Time:      {min(final_times)}.')
-    print(f'Slowest Time:      {max(final_times)}.')
-    print(f'Average Time:      {round(mean(final_times))}.')
+    print(f'Fastest Time:      {time_as_string(min(final_times))}.')
+    print(f'Slowest Time:      {time_as_string(max(final_times))}.')
+    print(f'Average Time:      {time_as_string(round(mean(final_times)))}.')
     print()
     print(f'Fastest Time by Runner #{best_runner}.')
     print()
