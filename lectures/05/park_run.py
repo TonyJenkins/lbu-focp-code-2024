@@ -8,10 +8,14 @@ def parse_line(data_line):
 
 
 def print_statistics(final_times):
+
+    from statistics import mean
+
     print()
     print(f'Number of Runners: {len(final_times)}.')
     print(f'Fastest Time:      {min(final_times)}.')
     print(f'Slowest Time:      {max(final_times)}.')
+    print(f'Average Time:      {round(mean(final_times))}.')
 
 
 if __name__ == '__main__':
