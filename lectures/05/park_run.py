@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def time_as_string(seconds):
     mins = seconds // 60
     secs = seconds % 60
@@ -16,11 +17,17 @@ def parse_line(data_line):
     return this_runner, int(this_time)
 
 
+def print_headers():
+    print()
+    print('Park Run Results')
+    print('================')
+    print()
+
+
 def print_statistics(final_times, best_runner):
 
     from statistics import mean
 
-    print()
     print(f'Number of Runners: {len(final_times)}.')
     print()
     print(f'Fastest Time:      {time_as_string(min(final_times))}.')
@@ -56,6 +63,7 @@ if __name__ == '__main__':
                 print('Invalid data. Will ignore.')
 
     if times:
+        print_headers()
         print_statistics(times, top_runner)
     else:
         print('No data entered. Nothing to do.')
