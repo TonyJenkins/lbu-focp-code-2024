@@ -4,7 +4,7 @@ This week we will look at an example program that illustrates much of what we ha
 
 We will include some file handling, which will involve the reuse of code from the previous lecture. 
 
-The program is actually a slight variation one one from a previous lecture, with a small twist.
+The program is actually a slight variation on one from a previous lecture, with a small twist.
 
 ## 1. Introduction
 ## 2. Gone to the Dogs
