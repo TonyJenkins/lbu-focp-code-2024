@@ -53,8 +53,11 @@ if __name__ == '__main__':
     try:
         with open(sys.argv[1], 'r') as dog_file:
             for dog_line in dog_file:
-                name, time = parse_dog_line(dog_line)
-                update_times(dog_details, name, time)
+                try:
+                    name, time = parse_dog_line(dog_line)
+                    update_times(dog_details, name, time)
+                except IndexError:
+                    print(f'Error found on line "{dog_line.strip()}". Will ignore.')
 
     except FileNotFoundError:
         print(f'{sys.argv[0]}: Cannot open "{sys.argv[1]}".')
